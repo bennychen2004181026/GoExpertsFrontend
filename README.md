@@ -5,6 +5,24 @@ Repo for GoExperts frontend sources without a pipeline. You need to construct a 
 3. Compose your pipeline file and put them into `cicd`
 4. Build up a pipeline on cicd platforms like Jenkins, Travis CI, Github Actions and have a test.
 
+## Prerequisites
+
+Before you begin, ensure you have met the following requirements:
+* Node.js 16.x (Important: Do not use Node.js 17+ as there are compatibility issues)
+* npm or yarn package manager
+
+### Installing Node.js 16
+
+Using nvm (Node Version Manager) - Recommended:
+```bash
+# Install nvm (if not installed)
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+
+# Install Node.js 16
+nvm install 16
+
+# Use Node.js 16
+nvm use 16
 
 <h1>P3项目开展建议</h1>
 
