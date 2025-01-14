@@ -1,5 +1,4 @@
 import axios, { AxiosRequestConfig } from 'axios';
-import { DEVELOPMENT_API_URL, UAT_API_URL, PRODUCTION_API_URL } from 'constants/apiUrl';
 import { UAT, PRODUCTION } from 'constants/environment';
 
 /**
@@ -7,15 +6,15 @@ import { UAT, PRODUCTION } from 'constants/environment';
  * @return corresponding api url
  */
 const getApiUrl = () => {
-  const environment = process.env.NODE_ENV;
-
+  const environment = process.env.NODE_ENV || 'development';
+  
   switch (environment) {
     case PRODUCTION:
-      return PRODUCTION_API_URL;
+      return process.env.REACT_APP_PRODUCTION_API_URL;
     case UAT:
-      return UAT_API_URL;
+      return process.env.REACT_APP_UAT_API_URL;
     default:
-      return DEVELOPMENT_API_URL;
+      return process.env.REACT_APP_DEVELOPMENT_API_URL;
   }
 };
 
